@@ -16,3 +16,7 @@ establishes a GraphQL server.
 The `user` and `post` types also have matching TypeScript models inside of `/types`.
 
 The GraphQL types path, along with the desired API endpoint is given to Nuxt via the `nuxt.config.ts` in the root.
+
+## Client
+In app.vue, the client fetches posts titles and content, and usernames, displaying them on the page. This utilizes
+the composable wrapper method `useAsyncQuery` provided by Apollo Client.

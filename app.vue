@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-const {data, loading, error} = await useAsyncQuery(gql`
+const {data, error} = await useAsyncQuery(gql`
     query getPosts {
         posts {
             title,
@@ -10,6 +10,12 @@ const {data, loading, error} = await useAsyncQuery(gql`
         }
     }    
   `);
+
+if (error){
+  console.log(error);
+  // ideally throw error to nuxt, displaying in error handler route
+}
+
 console.log(loading)
 const posts = data.value.posts;
 const users = data.value.users;
